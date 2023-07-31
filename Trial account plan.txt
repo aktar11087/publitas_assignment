@@ -81,7 +81,9 @@ Execute the Script:
 Run the script using the following command:
 $./create_google_workspace_group.sh
 
-Note: Ensure to replace 'path/to/your/service-account-key.json' with the actual path to your service account credentials JSON file. Also, update the GROUP_EMAIL_ADDRESS variable to the desired email address for your Google Workspace group. This script will create the Google Workspace group and add the users listed in the users.csv file to the group.
+Note: Ensure to replace 'path/to/your/service-account-key.json' with the actual path to your service account credentials JSON file. Also, update the GROUP_EMAIL_ADDRESS, GROUP_NAME, and GROUP_DESCRIPTION variables according to your preferences.
+
+This script will create the Google Group, add the users listed in the users.csv file to the group, and ensure that group members and the archive are not visible publicly.
 
 
 
