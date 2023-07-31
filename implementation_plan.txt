@@ -16,8 +16,36 @@ Click on the user's name to open their details.
 Click on the "Email" icon to send an invitation email.
 
 Create 8 Regular Users from a CSV File:
-Prepare a CSV file with user details, including UserName, Full Name, and Job Position. The CSV file should have columns like "Full Name," and "Job Position."
+Prepare a CSV file with user details, including First Name, Last Name, and Employee Title. The CSV file should have columns like "First Name," "Last Name," "Email Address," "Password," "Org Unit Path," and "Employee Ttitle"
 
+Set up a Google Cloud Platform (GCP) project:
+
+Go to the Google Cloud Console (https://console.cloud.google.com/).
+Create a new project or use an existing one.
+Enable the Admin SDK API:
+
+In the Google Cloud Console, go to the "APIs & Services" > "Dashboard" section.
+Click on "+ ENABLE APIS AND SERVICES."
+Search for "Admin SDK" and select it.
+Click the "Enable" button to enable the Admin SDK API for your project.
+
+Create a service account:
+
+In the Google Cloud Console, go to the "IAM & Admin" > "Service accounts" section.
+Click on "+ CREATE SERVICE ACCOUNT."
+Enter a name, description (optional), and click "CREATE."
+Choose a role with appropriate permissions. For user creation, you can use "Roles" > "Service Account Admin" or create a custom role with necessary permissions.
+Click "CONTINUE."
+On the next page, choose "JSON" as the key type and click "CREATE."
+
+Download the service account key:
+
+After creating the service account, click on the "CREATE KEY" button for the service account.
+Select "JSON" as the key type, and the key file will be downloaded to your computer.
+
+Prepare the CSV file:
+
+Create a CSV file with the necessary user information, such as first name, last name, email address, and other user details. Make sure to use the correct column headers.
 Bash script that reads user details from a CSV file and creates 8 regular users using the useradd command on a Linux system:
 
 Save the above script in a file, for example, create_users.sh, and give it executable permissions:
@@ -28,15 +56,10 @@ You can then run the script by providing the CSV file as an argument:
 
 $sudo ./create_users.sh path/to/users.csv
 
-Make sure your CSV file has the following format (without the header row):
 
-Username,Full Name,Job Position
-user1,User One,Engineer
-user2,User Two,Designer
-user3,User Three,Manager
-
-# Add more users as needed
+Add more users as needed
 The script will read the CSV file, create the users, and set their passwords. You can customize the script to fit your specific needs and password generation logic if necessary.
+
 
 #Creating the Google Group and Adding Users:
 
