@@ -6,7 +6,7 @@ You can create manually through the Google Workspace Admin Console.
 Here are the steps:
 Log in to the Google Workspace Admin Console with your Superadmin account.
 Go to "Users" and click on the "+" icon to add new users.
-Fill in the details for each Superadmin user, such as email address, full name, job position, etc.
+Fill in the details for each Superadmin user, such as email address, first name, last name, employee title, etc.
 
 Send Superadmin User Invitation:
 You can invite the second Superadmin user by sending them an email invitation from the Google Workspace Admin Console. Here's how:
