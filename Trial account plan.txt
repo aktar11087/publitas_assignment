@@ -38,9 +38,43 @@ user3,User Three,Manager
 # Add more users as needed
 The script will read the CSV file, create the users, and set their passwords. You can customize the script to fit your specific needs and password generation logic if necessary.
 
+Creating the Google Group and Adding Users:
+Assuming you have admin access, follow these steps to create a Google Group and add users to it:
+Step 1: Log in to your Google Workspace Admin Console at admin.google.com.
 
-Create Google Drive Shared Folders:
-To create Google Drive shared folders, you can manually create them in your Google Drive and set the appropriate sharing permissions according to the Publitas_Asset_Management_and_Classification_Policy and ISMS policies.
-Keep in mind that you might need to adjust the scripts and configurations to meet your specific requirements and ensure compliance with your organization's policies. Additionally, make sure to test the scripts in a controlled environment before applying them to your production system.
+Step 2: Go to "Groups" from the dashboard.
 
-Remember that these scripts are for illustrative purposes, and you should always review and verify any scripts you plan to use for your organization.
+Step 3: Click on "Create Group."
+
+Step 4: Fill in the required details like Group Name, Group Email Address, Group Description, etc.
+
+Step 5: Under "Group settings," set "Who can join the group" to "Anyone on the Internet."
+
+Step 6: Under "Access Level," set "View topics" and "View Members" to "All organization members."
+
+Step 7: Add the 9 users to the group using their email addresses.
+
+Step 8: Review and confirm the creation of the group.
+
+Configuring Email Receiving Options:
+By default, when you create a Google Group, it should be set up to receive emails from the public. You can double-check this under the "Settings" tab for the group and verify that the "Public" option is selected under "Access permissions" for "Who can send emails to this group."
+
+# Google Drive Shared Folders:
+To create Google Drive shared folders according to your organization's policies, you can follow these general steps:
+
+Step 1: Log in to your Google Workspace Admin Console at admin.google.com.
+
+Step 2: Go to "Apps" and then "Google Workspace."
+
+Step 3: Click on "Drive and Docs."
+
+Step 4: Click on "Sharing settings."
+
+Step 5: Review your organization's Publitas Asset Management and Classification Policy and ensure that the sharing settings align with your ISMS policy (Publitas Access and Account Management Policy).
+
+Step 6: Configure sharing settings for Drive to comply with the policies mentioned above.
+
+Please note that the exact steps and options might vary depending on your organization's Google Workspace configuration and specific policies. It is crucial to understand and follow your organization's guidelines while setting up these services.
+
+Note: If you don't have admin access or are unsure about the process, I recommend reaching out to your organization's IT team for assistance.
+
