@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "publitas-394517",
+  "private_key_id": "5691ec35f5312ff6bd6b844b74f2548163ec14af",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCLEmvQaSZwL8FG\nxWtA6Ivk9Gq7TziizlsbALljely7WGE9PhkYs3G6VlTaNfWV5QeAyymuJ8w9maxz\nt1D/8V+Xb+yws4s4+oxuKJ0w6dsFvtWwnNh0uvhpPsuLKcVhJeT9qYk2XSqs1ZMW\n7efVwBAjPILC+FKDiy+laQs52suqGxj1iPbnTDC0lag1yDWrtUB8UdBhtnpiHcdq\n1lUqWI6AImpkX7JUjqVVexTUIu/4LL7PfUj2aYBdKV4kUuqwxmSzI8aAfX4Aa35l\nWDbsEx6G6nRA+2eikIRqcRFY0NYi0Bj2TZmXwsIrOIrdUteKNx1ainfQNKb9N2Wp\nfMb4PfHzAgMBAAECggEADfw7wFkapvR+dL38o6nfC5aytwRn9yNWURhZDFJtSd/A\n45Y/ktbUzH7LCKidekXuY7rKhbt11AoEqBxatmpRCRsVy806Zm/3uEo4SIdz4ZeH\nyLt1HwQAYCES+fso4LSdWw71//QNixTtNkSVaE7osIpwweeT8KuKDpHKMba5fXEX\nL8YjmmTTBXnPnvoFDMI318qe5oZ1VL3mLsHxZbWGHOsHpmjaUaw6CO+z86jQ42gd\n6phEAgIGFFZuy/H1FtuJ7UpSJZby8tPD9PjfZUPA63/jlGWwcjSBFNv/DC4M2Wys\nLx2qWhmxJMuG7lrw/1YlzWbofoAHjLpfoeFuD6EZLQKBgQDDeR2tk1LVN4oyyZvZ\nSvxzayDotI1P2eAkbIv3wlWGwcsIY7LBYhg3Wqht9nXovMX4hQrXw0S3Zs39BZ6T\neGmdWfg8A0IvYbsTD5+FDLdXp5GRnfK+c4uNMwl826+LqsDGTNe2SAXhqe4QSd/1\npCNUY7ULYs0X0V7D9CguELYENQKBgQC2InaxHgrSKfvb8IctNezPFi8SZh75qK+R\nhuYzPEbbwVOms0KAFeLpiRkyTRHJhSB0a1c1bZBDK5eGFaTcMIzCWBed1j0NuHkd\nNfQwcI0BEe3jEos9iD7Z6gFdwESKXjVdvZtaoRgreVwzxLAvAyVvItDr9ICXlyLA\nRL1Dnt4ShwKBgA9z+rmnJOxAOMetEooKGI0TUgWziFxgsAyRHDuY/GPr3B4sq4wI\nMjvmCdyvmECu88Oi2OmXwU3ybaRsFk44Pbk3zJ0J8OiIBF8MZCMDj1b5o1Nsti0C\nO20NNNnPEECtXhIPLxp09SoS4gQdovvrXvOj8kMVK3uPjLtXCPojThBlAoGBAKwG\nMwqosFm906bxMAuQkiEp972t/HWbUG/n9MbRmK94kpSxXQ7zHQWsOsMarcEjXvr2\nY0EQQaBfrNa03KgnptrsLyohrjqmUKY5TnDt7Q/kqkW9PwwYAhz5+t5ceaAiyM7I\nBdJ8swJktqQikrFkjFfCj4c8wLPsyKLGiegzRdZDAoGAc5/6Xbiz1gNzWfxJ3MPB\n0+tchlZpgpNkLAKkrryagiFzsJG+OonjlPAgTIM5oX5dbNIRxj2TrODuUw2Ww9vw\nsHqWiC4wAaW1gnY6q8CPzT5cbcca7jiDn7JTP0qtzg5Nl5pOe1RTfu5152CzEvVD\nfL1WsIPTcXb59UDJ7ZTuKO0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-admin@publitas-394517.iam.gserviceaccount.com",
+  "client_id": "100177544992838383648",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-admin%40publitas-394517.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
