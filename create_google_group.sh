@@ -3,15 +3,26 @@
 # Set the necessary variables
 SERVICE_ACCOUNT_FILE="path/to/your/service-account-key.json"
 GROUP_EMAIL_ADDRESS="your-group@example.com"
+GROUP_NAME="Your Group Name"
+GROUP_DESCRIPTION="Your Group Description"
 
-# Function to create the Google Workspace Group
-create_google_workspace_group() {
-  ACCESS_TOKEN=$(get_access_token)
+# Function to create the Google Group
+create_google_group() {
   curl -X POST \
-    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -H "Authorization: Bearer $(get_access_token)" \
     -H "Content-Type: application/json" \
     -d "{
-      \"email\": \"$GROUP_EMAIL_ADDRESS\"
+      \"email\": \"$GROUP_EMAIL_ADDRESS\",
+      \"name\": \"$GROUP_NAME\",
+      \"description\": \"$GROUP_DESCRIPTION\",
+      \"allowExternalMembers\": true,
+      \"whoCanJoin\": \"INVITED_CAN_JOIN\",
+      \"whoCanPostMessage\": \"ANYONE_CAN_POST\",
+      \"whoCanViewGroup\": \"ALL_MEMBERS_CAN_VIEW\",
+      \"whoCanViewMembership\": \"ALL_MEMBERS_CAN_VIEW\",
+      \"membersCanPostAsTheGroup\": false,
+      \"archiveOnly\": false,
+      \"isArchived\": false
     }" \
     "https://www.googleapis.com/admin/directory/v1/groups"
 }
@@ -26,15 +37,14 @@ get_access_token() {
   echo $ACCESS_TOKEN
 }
 
-# Function to add members to the Google Workspace Group from the CSV file
-add_members_to_google_workspace_group() {
-  ACCESS_TOKEN=$(get_access_token)
+# Function to add members to the Google Group from the CSV file
+add_members_to_google_group() {
   while IFS= read -r member; do
     curl -X POST \
-      -H "Authorization: Bearer $ACCESS_TOKEN" \
+      -H "Authorization: Bearer $(get_access_token)" \
       -H "Content-Type: application/json" \
       -d "{
-        \"email\": \"$member\",
+        \"fullname\": \"$member\",
         \"role\": \"MEMBER\"
       }" \
       "https://www.googleapis.com/admin/directory/v1/groups/$GROUP_EMAIL_ADDRESS/members"
@@ -43,8 +53,7 @@ add_members_to_google_workspace_group() {
 }
 
 # Main script execution
-create_google_workspace_group
-add_members_to_google_workspace_group
+create_google_group
+add_members_to_google_group
 
-echo "Google Workspace Group creation and user addition completed."
-
+echo "Google Group creation and user addition completed."
