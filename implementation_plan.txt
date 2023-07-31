@@ -1,0 +1,108 @@
+# Google Workspace domain trial account action plan
+
+Create 2 Superadmin Users:
+You can create manually through the Google Workspace Admin Console. 
+
+Here are the steps:
+Log in to the Google Workspace Admin Console with your Superadmin account.
+Go to "Users" and click on the "+" icon to add new users.
+Fill in the details for each Superadmin user, such as email address, full name, job position, etc.
+
+Send Superadmin User Invitation:
+You can invite the second Superadmin user by sending them an email invitation from the Google Workspace Admin Console. Here's how:
+Go to "Users" in the Admin Console.
+Locate the user with the email address "system@publitas.com."
+Click on the user's name to open their details.
+Click on the "Email" icon to send an invitation email.
+
+Create 8 Regular Users from a CSV File:
+Prepare a CSV file with user details, including UserName, Full Name, and Job Position. The CSV file should have columns like "Full Name," and "Job Position."
+
+Bash script that reads user details from a CSV file and creates 8 regular users using the useradd command on a Linux system:
+
+Save the above script in a file, for example, create_users.sh, and give it executable permissions:
+
+$chmod 777 create_users.sh
+
+You can then run the script by providing the CSV file as an argument:
+
+$sudo ./create_users.sh path/to/users.csv
+
+Make sure your CSV file has the following format (without the header row):
+
+Username,Full Name,Job Position
+user1,User One,Engineer
+user2,User Two,Designer
+user3,User Three,Manager
+
+# Add more users as needed
+The script will read the CSV file, create the users, and set their passwords. You can customize the script to fit your specific needs and password generation logic if necessary.
+
+#Creating the Google Group and Adding Users:
+
+Assuming you have admin access, follow these steps to create a Google Group and add users to it:
+Step 1: Log in to your Google Workspace Admin Console at admin.google.com.
+
+Step 2: Go to "Groups" from the dashboard.
+
+Step 3: Click on "Create Group."
+
+Step 4: Fill in the required details like Group Name, Group Email Address, Group Description, etc.
+
+Step 5: Under "Group settings," set "Who can join the group" to "Anyone on the Internet."
+
+Step 6: Under "Access Level," set "View topics" and "View Members" to "All organization members."
+
+Step 7: Add the 9 users to the group using their email addresses.
+
+Step 8: Review and confirm the creation of the group.
+
+Configuring Email Receiving Options:
+By default, when you create a Google Group, it should be set up to receive emails from the public. You can double-check this under the "Settings" tab for the group and verify that the "Public" option is selected under "Access permissions" for "Who can send emails to this group."
+
+#Create 1 Google group automated(scripted) and add the 9 users to the group:
+Set Up the Environment:
+
+Create a project on the Google Cloud Console and enable the Admin SDK API.
+Create service account credentials with the necessary privileges and download the JSON key.
+Install jq on your Linux system to process JSON data.
+Create a CSV File:
+Create a CSV file named users.csv containing the email addresses of the users you want to add, one email address per line.
+
+Create the Linux Bash Script:
+Create a file named create_google_group.sh and paste the following script into it:
+
+Give Execute Permissions:
+Make the script executable by running the following command:
+
+$chmod 777 create_google_workspace_group.sh
+
+Execute the Script:
+Run the script using the following command:
+$./create_google_workspace_group.sh
+
+Note: Ensure to replace 'path/to/your/service-account-key.json' with the actual path to your service account credentials JSON file. Also, update the GROUP_EMAIL_ADDRESS, GROUP_NAME, and GROUP_DESCRIPTION variables according to your preferences.
+
+This script will create the Google Group, add the users listed in the users.csv file to the group, and ensure that group members and the archive are not visible publicly.
+
+
+
+# Google Drive Shared Folders:
+To create Google Drive shared folders according to your organization's policies, you can follow these general steps:
+
+Step 1: Log in to your Google Workspace Admin Console at admin.google.com.
+
+Step 2: Go to "Apps" and then "Google Workspace."
+
+Step 3: Click on "Drive and Docs."
+
+Step 4: Click on "Sharing settings."
+
+Step 5: Review your organization's Publitas Asset Management and Classification Policy and ensure that the sharing settings align with your ISMS policy (Publitas Access and Account Management Policy).
+
+Step 6: Configure sharing settings for Drive to comply with the policies mentioned above.
+
+Please note that the exact steps and options might vary depending on your organization's Google Workspace configuration and specific policies. It is crucial to understand and follow your organization's guidelines while setting up these services.
+
+Note: If you don't have admin access or are unsure about the process, I recommend reaching out to your organization's IT team for assistance.
+
