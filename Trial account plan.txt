@@ -1,83 +1,44 @@
 # Google Workspace domain trial account action plan
 
 Create 2 Superadmin Users:
-We can create manually through the Google Workspace Admin Console. 
+You can create manually through the Google Workspace Admin Console. 
 
 Here are the steps:
 Log in to the Google Workspace Admin Console with your Superadmin account.
 Go to "Users" and click on the "+" icon to add new users.
 Fill in the details for each Superadmin user, such as email address, full name, job position, etc.
+
 Send Superadmin User Invitation:
 You can invite the second Superadmin user by sending them an email invitation from the Google Workspace Admin Console. Here's how:
 Go to "Users" in the Admin Console.
 Locate the user with the email address "system@publitas.com."
 Click on the user's name to open their details.
 Click on the "Email" icon to send an invitation email.
+
 Create 8 Regular Users from a CSV File:
-Prepare a CSV file with the required user details, including email addresses, full names, and job positions. The CSV file should have columns like "Email," "Full Name," and "Job Position."
-Then, you can use Google Apps Script to automate the user creation process. Here's a basic example of the script:
+Prepare a CSV file with user details, including UserName, Full Name, and Job Position. The CSV file should have columns like "Full Name," and "Job Position."
 
-function createUsersFromCSV() {
-  var csvFile = DriveApp.getFilesByName('users.csv').next();
-  var csvData = Utilities.parseCsv(csvFile.getBlob().getDataAsString());
-  
-  for (var i = 1; i < csvData.length; i++) {
-    var userEmail = csvData[i][0];
-    var fullName = csvData[i][1];
-    var jobPosition = csvData[i][2];
-    var password = generateRandomPassword(); // Implement your password generation logic if needed
-    
-    var newUser = {
-      primaryEmail: userEmail,
-      name: {
-        fullName: fullName,
-      },
-      password: password,
-      organizations: [{ title: jobPosition }],
-      changePasswordAtNextLogin: true, // Set this to false if you don't want users to change their password on first login
-    };
-    
-    AdminDirectory.Users.insert(newUser);
-  }
-}
+Bash script that reads user details from a CSV file and creates 8 regular users using the useradd command on a Linux system:
 
-function generateRandomPassword() {
-  // Implement your password generation logic here if needed
-  // Return a random password for each user
-}
-Remember to adjust the CSV file name in getFilesByName('users.csv') to match the name of your CSV file.
+Save the above script in a file, for example, create_users.sh, and give it executable permissions:
 
-Create 1 Google Group and Add Users:
-You can use the following script to create a Google Group and add the users to it:
+$chmod 777 create_users.sh
 
-function createGoogleGroupAndAddMembers() {
-  var groupName = "Your_Group_Name"; // Replace with the desired group name
-  var groupEmail = "your-group@example.com"; // Replace with the desired group email address
-  var membersEmails = [
-    // Add the email addresses of the 9 users here
-    "user1@example.com",
-    "user2@example.com",
-    // Add more users as needed
-  ];
+You can then run the script by providing the CSV file as an argument:
 
-  var group = {
-    email: groupEmail,
-    name: groupName,
-    description: "Your group description", // Replace with the group description
-    allowExternalMembers: true, // Allow external members (public) to send emails to the group
-    whoCanJoin: "INVITED_CAN_JOIN", // Change to "ALL_IN_DOMAIN_CAN_JOIN" if you want anyone in the domain to join
-    whoCanViewMembership: "ALL_MEMBERS_CAN_VIEW", // Members and managers can see all members
-    whoCanViewGroup: "ALL_MEMBERS_CAN_VIEW", // Members and managers can view the group
-    whoCanInvite: "ALL_MANAGERS_CAN_INVITE", // Only managers can invite members
-  };
+$sudo ./create_users.sh path/to/users.csv
 
-  var newGroup = AdminGroupsApp.createGroup(group);
+Make sure your CSV file has the following format (without the header row):
 
-  // Add members to the group
-  for (var i = 0; i < membersEmails.length; i++) {
-    AdminGroupsApp.addGroupMember(newGroup, membersEmails[i]);
-  }
-}
+Username,Full Name,Job Position
+user1,User One,Engineer
+user2,User Two,Designer
+user3,User Three,Manager
+
+# Add more users as needed
+The script will read the CSV file, create the users, and set their passwords. You can customize the script to fit your specific needs and password generation logic if necessary.
+
+
 Create Google Drive Shared Folders:
 To create Google Drive shared folders, you can manually create them in your Google Drive and set the appropriate sharing permissions according to the Publitas_Asset_Management_and_Classification_Policy and ISMS policies.
 Keep in mind that you might need to adjust the scripts and configurations to meet your specific requirements and ensure compliance with your organization's policies. Additionally, make sure to test the scripts in a controlled environment before applying them to your production system.
