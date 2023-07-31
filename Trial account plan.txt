@@ -38,7 +38,8 @@ user3,User Three,Manager
 # Add more users as needed
 The script will read the CSV file, create the users, and set their passwords. You can customize the script to fit your specific needs and password generation logic if necessary.
 
-Creating the Google Group and Adding Users:
+#Creating the Google Group and Adding Users:
+
 Assuming you have admin access, follow these steps to create a Google Group and add users to it:
 Step 1: Log in to your Google Workspace Admin Console at admin.google.com.
 
@@ -58,6 +59,31 @@ Step 8: Review and confirm the creation of the group.
 
 Configuring Email Receiving Options:
 By default, when you create a Google Group, it should be set up to receive emails from the public. You can double-check this under the "Settings" tab for the group and verify that the "Public" option is selected under "Access permissions" for "Who can send emails to this group."
+
+#Create 1 Google group automated(scripted) and add the 9 users to the group:
+Set Up the Environment:
+
+Create a project on the Google Cloud Console and enable the Admin SDK API.
+Create service account credentials with the necessary privileges and download the JSON key.
+Install jq on your Linux system to process JSON data.
+Create a CSV File:
+Create a CSV file named users.csv containing the email addresses of the users you want to add, one email address per line.
+
+Create the Linux Bash Script:
+Create a file named create_google_group.sh and paste the following script into it:
+
+Give Execute Permissions:
+Make the script executable by running the following command:
+
+$chmod 777 create_google_workspace_group.sh
+
+Execute the Script:
+Run the script using the following command:
+$./create_google_workspace_group.sh
+
+Note: Ensure to replace 'path/to/your/service-account-key.json' with the actual path to your service account credentials JSON file. Also, update the GROUP_EMAIL_ADDRESS variable to the desired email address for your Google Workspace group. This script will create the Google Workspace group and add the users listed in the users.csv file to the group.
+
+
 
 # Google Drive Shared Folders:
 To create Google Drive shared folders according to your organization's policies, you can follow these general steps:
