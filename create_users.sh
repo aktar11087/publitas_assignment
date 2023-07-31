@@ -34,7 +34,7 @@ EOF
 }
 
 # Read the CSV file and create users
-while IFS=, read -r first_name last_name email; do
+while IFS=, read -r first_name last_name email employee_title; do
   create_user "$first_name" "$last_name" "$email" "$employee_title"
 done < 'path/to/your/csv_file.csv'
 
